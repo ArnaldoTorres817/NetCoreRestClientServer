@@ -20,7 +20,7 @@ namespace RestClient
                 // Tirar excepcion si el status code no es exitoso
                 response.EnsureSuccessStatusCode();
                 // Peticion exitosa
-                Console.WriteLine(response.StatusCode);
+                // Console.WriteLine(response.StatusCode);
                 Console.WriteLine(await response.Content.ReadAsStringAsync());
             }
             catch (UriFormatException e) {
