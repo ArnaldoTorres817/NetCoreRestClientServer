@@ -35,3 +35,18 @@ dotnet run 5000
 
 # Server is listening at port 5000.
 ```
+
+Now you can perform a GET request to your server.
+
+```bash
+# RestClient
+dotnet run http://localhost:5000
+```
+
+#### Output
+```json
+{
+  "id": 0,
+  "userName": "Arnaldo"
+}
+```
