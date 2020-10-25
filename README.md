@@ -14,7 +14,10 @@ dotnet run https://jsonplaceholder.typicode.com/todos/1
 ```
 #### Output
 ```json
+<<<<<<< HEAD
 OK
+=======
+>>>>>>> docs: README
 {
   "userId": 1,
   "id": 1,
