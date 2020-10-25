@@ -17,6 +17,11 @@ namespace RestServer
             PropertyNameCaseInsensitive = true
         };
 
+        static readonly JsonWriterOptions writerOptions = new JsonWriterOptions
+        {
+            Indented = true
+        };
+
         static void Main(string[] args)
         {
             // Handle CTRL+C for shutting down the server cleanly.
@@ -83,7 +88,7 @@ namespace RestServer
             // TODO: Error handling and finally clause for closing output stream
             response.StatusCode = 200;
             Stream output = response.OutputStream;
-            Utf8JsonWriter writer = new Utf8JsonWriter(output);
+            Utf8JsonWriter writer = new Utf8JsonWriter(output, writerOptions);
             SampleData data = new SampleData
             {
                 Id = 0,
