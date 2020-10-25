@@ -27,15 +27,17 @@ namespace RestServer
                 listener.Close();
                 Environment.Exit(0);
             };
-            Uri uri = BuildUri();
+
+            int port = Convert.ToInt32(args[0]);
+            Uri uri = BuildUri(port);
             StartListener(uri);
         }
 
-        static Uri BuildUri()
+        static Uri BuildUri(int port)
         {
             UriBuilder uriBuilder = new UriBuilder();
             uriBuilder.Host = "localhost";
-            uriBuilder.Port = 5000;
+            uriBuilder.Port = port;
             return uriBuilder.Uri;
         }
 
@@ -46,7 +48,7 @@ namespace RestServer
 
             // Start listening...
             listener.Start();
-            Console.WriteLine("Server is listening...");
+            Console.WriteLine($"Server is listening at port {uri.Port}.");
 
             HttpListenerContext context;
             do
